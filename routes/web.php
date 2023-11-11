@@ -22,7 +22,12 @@ Route::get('/form', function () {
 });
 
 Route::get('/mahasiswa', function () {
-    return view('mahasiswa');
+    $npm = [2109020120, 2109020121, 2109020122, 2109020123, 2109020124];
+    $nama = ['Wahyu Ardiansyah', 'Ilham Wicak', 'Petir Alam', 'Dicky Rahman', 'Bob Darmawan'];
+    $jurusan = ['Teknologi Informasi', 'Sistem Informasi', 'Data Sains', 'Sistem Informasi', 'Data Sains'];
+    $kelas = ['C1', 'C2', 'D1', 'A2', 'B3'];
+    $jumlah = count($npm);
+    return view('mahasiswa', compact('npm', 'jumlah', 'nama', 'jurusan', 'kelas'));
 });
 
 Route::get('/profile', function () {
@@ -36,6 +41,3 @@ Route::get('/profile', function () {
     ]);
 });
 
-Route::get('pertemuan5/perulangan', function () {
-    return view('pertemuan5/perulangan');
-});

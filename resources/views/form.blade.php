@@ -22,16 +22,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/')}}">Home</a>
+                        <a class="nav-link" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profile')}}">Profile</a>
+                        <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/mahasiswa')}}">Mahasiswa</a>
+                        <a class="nav-link" href="{{ url('/mahasiswa') }}">Mahasiswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled"  aria-disabled="true">Form</a>
+                        <a class="nav-link disabled" aria-disabled="true">Form</a>
                     </li>
                 </ul>
             </div>
@@ -40,14 +40,14 @@
 
     {{-- form --}}
     <form action="POST">
-        <div class="container form">
-            <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Masukkan Nama Anda</label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Nama Lengkap">
+        <div class="container">
+            <div class="mb-3 mt-5">
+                <label class="form-label">Masukkan Nama Anda</label>
+                <input type="text" class="form-control" placeholder="Nama Lengkap">
             </div>
             <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Npm</label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Npm">
+                <label class="form-label">Npm</label>
+                <input type="number" class="form-control" placeholder="Npm">
             </div>
             <div class="mb-3">
                 <label for="disabledSelect" class="form-label">Jurusan</label>
@@ -66,13 +66,21 @@
                     <option>D</option>
                 </select>
             </div>
-            <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Masukkan Tanggal Lahir</label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Tanggal Lahir">
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Laki - Laki
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Perempuan
+                </label>
             </div>
             <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Masukkan Tempat Lahir</label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Kota Tempat Lahir">
+                <label class="form-label">Masukkan Tanggal Lahir</label>
+                <input type="date" class="form-control">
             </div>
             <button type="submit" class="btn btn-primary">Kirim</button>
         </div>
