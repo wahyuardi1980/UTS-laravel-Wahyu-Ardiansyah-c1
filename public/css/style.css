@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito&display=swap");
+
+body {
+    font-family: "Gabarito";
+}
+
+.nav-link {
+    color: white;
+    text-shadow: 0 0 0.7;
+}
+
+.navbar,
+.navbar-brand {
+    font-size: 20px;
+}
+
+.nav-link:hover {
+    background-color: rgb(69, 177, 69);
+    color: white !important;
+}
+
+h1 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+h1 span {
+    color: rgb(69, 177, 69);
+}
+
+.tables {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+tr td {
+    color: white;
+    /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7); */
+}
+
+.bungkus {
+    background-color: rgb(58, 61, 59);
+    margin: 0px auto 0px auto;
+    padding: 5px;
+    font-size: 20px;
+    display: table;
+    border-radius: 18px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.26);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.26);
+}
+
+.form {
+    margin-top: 50px;
+    margin-bottom: 35px;
+}
+
+.desc {
+    text-align: center;
+    font-weight: 400;
+    opacity: 0.3px;
+}
+
+.gambar {
+    border-radius: 180px;
+    margin-bottom: 25px;
+}
