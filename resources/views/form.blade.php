@@ -12,79 +12,83 @@
 
 <body>
     {{-- navbar --}}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Form</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">UTS Laravel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/mahasiswa') }}">Mahasiswa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Form</a>
-                    </li>
-                </ul>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">UTS Laravel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/product') }}">Produk</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
         </div>
     </nav>
 
     {{-- form --}}
-    <form action="POST">
-        <div class="container">
-            <div class="mb-3 mt-5">
-                <label class="form-label">Masukkan Nama Anda</label>
-                <input type="text" class="form-control" placeholder="Nama Lengkap">
+    <div class="container">
+        <h1 class="judul-form">Form Tambah Produk</h1>
+        <form>
+            <div class="row">
+                <div class="col-lg">
+                    <div class="mb-3">
+                        <label class="form-label">Kode Produk</label>
+                        <input type="text" class="form-control" placeholder="Input Kode Produk">
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="mb-3">
+                        <label class="form-label">Nama Produk</label>
+                        <input type="text" class="form-control" placeholder="Input Nama Produk">
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="mb-3">
+                        @php
+                            $nilai_awal = 0;
+                        @endphp
+                        <label class="form-label">Jenis Produk</label>
+                        <select class="form-select">
+                            @for ($i = 0; $i < $jumlah; $i++)
+                                <option>{{ $jenis_produk[$i] }}</option>
+                            @endfor
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Npm</label>
-                <input type="number" class="form-control" placeholder="Npm">
+            <div class="row">
+                <div class="col-lg">
+                    <div class="mb-3">
+                        <label class="form-label">Harga</label>
+                        <input type="number" class="form-control" placeholder="Input Harga">
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="d-grid gap-2 button-rwt">
+                        <button type="button" class="btn btn-success">Simpan</button>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="disabledSelect" class="form-label">Jurusan</label>
-                <select id="disabledSelect" class="form-select">
-                    <option>Teknologi Informasi</option>
-                    <option>Sistem Informasi</option>
-                    <option>Sains Data</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="disabledSelect" class="form-label">Kelas</label>
-                <select id="disabledSelect" class="form-select">
-                    <option>A</option>
-                    <option>B</option>
-                    <option>C</option>
-                    <option>D</option>
-                </select>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Laki - Laki
-                </label>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Perempuan
-                </label>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Masukkan Tanggal Lahir</label>
-                <input type="date" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">Kirim</button>
-        </div>
-    </form>
+        </form>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
