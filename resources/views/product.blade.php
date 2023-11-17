@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <table class="table table-bordered table-primary">
+        <table class="table table-bordered table-primary table-striped">
             <thead>
                 <tr>
                     <th>Kode Produk</th>
